@@ -10,10 +10,11 @@ package interfaces;
  * @author Win-7
  */
 public interface IIterator {
-    void first();
     Object next();
     boolean hasNext();
-    boolean isDone();
-    Object currentItem();
-    
+//    Não precisa!
+//    void first();
+//    boolean isDone();
+//    Object currentItem();
+//    
 }

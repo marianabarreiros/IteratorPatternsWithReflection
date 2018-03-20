@@ -22,7 +22,7 @@ import model.Aluno;
  */
 public class IteratorSuperPower implements java.util.Iterator {
 
-    private ArrayList<Aluno> list;
+    private ArrayList<Aluno> alunos;
     private String property;
     private String operation;
     private String value;
@@ -30,7 +30,7 @@ public class IteratorSuperPower implements java.util.Iterator {
     private Method method;
     
     public IteratorSuperPower(ArrayList<Aluno> list, String property, String operation, String value) {
-        this.list = list;
+        this.alunos = list;
         this.property = property;
         this.operation = operation;
         this.value = value; 
@@ -69,11 +69,11 @@ public class IteratorSuperPower implements java.util.Iterator {
     public boolean hasNext() {
         Aluno aluno = null;
         
-        if(position > list.size())
+        if(position > alunos.size())
             return false;
         
-        while(position < list.size())
-            if((aluno = evaluate(list.get(position++))) != null) {
+        while(position < alunos.size())
+            if((aluno = evaluate(alunos.get(position++))) != null) {
                 position--;
                 return true;
             }
@@ -83,6 +83,6 @@ public class IteratorSuperPower implements java.util.Iterator {
 
     @Override
     public Object next() {
-        return list.get(position++);
+        return alunos.get(position++);
     }
 }

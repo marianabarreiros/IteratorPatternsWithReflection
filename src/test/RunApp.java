@@ -26,6 +26,7 @@ public class RunApp {
         alunos.add(new Aluno("Henrique",'M',5));
         
         Iterator i = new IteratorSuperPower((ArrayList<Aluno>) alunos, "nome", ">", "Alex");
+
         while(i.hasNext()) {
             Aluno a = (Aluno) i.next();
             System.out.println(a.getNome());
